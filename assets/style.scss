@@ -1,0 +1,19 @@
+//--------Style------------------
+@import './style/_includes';
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    @include flex;
+    min-height: 100vh;
+    background: $dark-blue;
+}
+
+
+.light{
+    background: $white;
+}

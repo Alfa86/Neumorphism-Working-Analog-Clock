@@ -1,0 +1,16 @@
+@mixin flex($justify:center, $align:center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin pointer($width, $height, $background, $zindex) {
+    content: '';
+    position: absolute;
+    width: $width;
+    height: $height;
+    background: $background;
+    z-index: $zindex;
+    border-radius: 6px 6px 0 0;
+}
+

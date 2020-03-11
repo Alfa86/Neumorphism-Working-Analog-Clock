@@ -1,0 +1,303 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@font-face {
+  font-family: 'fontello';
+  src: url("../font/fontello.eot?62094270");
+  src: url("../font/fontello.eot?62094270#iefix") format("embedded-opentype"), url("../font/fontello.woff2") format("woff2"), url("../font/fontello.woff?62094270") format("woff"), url("../font/fontello.ttf?62094270") format("truetype"), url("../font/fontello.svg?62094270#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: 'fontello';
+      src: url('../font/fontello.svg?62094270#fontello') format('svg');
+    }
+  }
+  */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-sun:before {
+  content: '\f185';
+}
+
+/* '' */
+.icon-moon:before {
+  content: '\f186';
+}
+
+/* '' */
+#switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 80px;
+  padding: 0 15px;
+}
+
+.uk-switch {
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  width: 100px;
+}
+
+.uk-switch input {
+  display: none;
+}
+
+.uk-switch-slider {
+  background-color: rgba(0, 0, 0, 0.22);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 30px;
+  bottom: 0;
+  cursor: pointer;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.uk-switch-slider:before {
+  content: "";
+  background-color: #4a6c85;
+  position: absolute;
+  width: 23px;
+  height: 26px;
+  left: 2px;
+  bottom: 2px;
+  border-radius: 50%;
+  -webkit-transition-property: -webkit-transform,-webkit-box-shadow;
+  transition-property: -webkit-transform,-webkit-box-shadow;
+  transition-property: transform,box-shadow;
+  transition-property: transform,box-shadow,-webkit-transform,-webkit-box-shadow;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.uk-switch-slider::after {
+  content: 'Dark';
+  position: absolute;
+  color: #4a6c85;
+  left: 40px;
+  line-height: 30px;
+  font-size: 0.75rem;
+}
+
+input:checked + .uk-switch-slider {
+  background-color: #bababa !important;
+}
+
+input:checked + .uk-switch-slider:before {
+  -webkit-transform: translateX(70px);
+          transform: translateX(70px);
+}
+
+input:checked + .uk-switch-slider::after {
+  content: 'Light';
+  position: absolute;
+  left: 32px;
+  color: white;
+}
+
+.uk-switch-slider.uk-switch-square, .uk-switch-slider.uk-switch-square:before {
+  border-radius: 0;
+}
+
+.uk-switch-slider.uk-switch-on-off {
+  background-color: #0d2838;
+}
+
+.uk-switch-slider.uk-switch-on-off.round::before {
+  font-family: 'fontello';
+  content: "\f186";
+  color: #0e2939;
+  text-align: center;
+  font-size: 18px;
+  padding-left: 2px;
+}
+
+input:checked + .uk-switch-slider.uk-switch-on-off {
+  background-color: #b7bec2 !important;
+}
+
+input:checked + .uk-switch-slider.uk-switch-on-off.round::before {
+  font-family: 'fontello';
+  color: #b7bec2;
+  content: "\f186";
+  font-size: 18px;
+  text-align: center;
+  padding-left: 2px;
+  background-color: #ffffff;
+}
+
+.uk-switch-slider.uk-switch-big:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.22);
+}
+
+input:checked + .uk-switch-slider.uk-switch-big:before {
+  -webkit-transform: translateX(26px) scale(1.2);
+          transform: translateX(26px) scale(1.2);
+}
+
+.clock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 350px;
+  height: 350px;
+  background: url(../assets/img/clock.png);
+  background-size: cover;
+  border: 4px solid #091921;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3), inset 0 15px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3), inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.clock::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border-radius: 50%;
+  z-index: 11;
+}
+
+.clock .hour, .clock .min, .clock .sec {
+  position: absolute;
+}
+
+.clock .hr, .clock .mn, .clock .sc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  position: relative;
+  border-radius: 50%;
+}
+
+.clock .hr {
+  width: 160px;
+  height: 160px;
+}
+
+.clock .hr::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: #ff105e;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+}
+
+.clock .mn {
+  width: 190px;
+  height: 190px;
+}
+
+.clock .mn::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background: #ffffff;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+
+.clock .sc {
+  width: 230px;
+  height: 230px;
+}
+
+.clock .sc::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #ffffff;
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #091921;
+}
+
+.light {
+  background: #ffffff;
+}
+/*# sourceMappingURL=style.css.map */

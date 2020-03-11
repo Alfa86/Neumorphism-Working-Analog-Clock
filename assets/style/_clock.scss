@@ -1,0 +1,52 @@
+.clock{
+    @include flex;
+    width: 350px;
+    height: 350px;
+    background:  url(../assets/img/clock.png);
+    background-size: cover;
+    border: 4px solid $dark-blue;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+                inset 0 -15px 15px rgba(255,255,255,0.05),
+                0 15px 15px rgba(0,0,0,0.3),
+                inset 0 15px 15px rgba(0,0,0,0.3);
+    &::before{
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: $white;
+        border-radius: 50%;
+        z-index: 11;
+    }
+    .hour, .min, .sec{
+        position: absolute;
+    }
+    .hr, .mn, .sc {
+        @include flex(center, unset);
+        position: relative;
+        border-radius: 50%;
+    }
+
+    .hr{
+        width: 160px;
+        height: 160px;
+        &::before{
+            @include pointer(8px, 80px, $magenta, 10);
+        }
+    }
+    .mn{
+        width: 190px;
+        height: 190px;
+        &::before{
+            @include pointer(4px, 90px, $white, 11);
+        }
+    }
+    .sc{
+        width: 230px;
+        height: 230px;
+        &::before{
+            @include pointer(2px, 150px, $white, 12);
+        }
+    }
+}
